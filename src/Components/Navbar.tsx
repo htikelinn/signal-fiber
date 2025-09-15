@@ -22,7 +22,7 @@ interface NavbarProps {
     mainLinks?: string[];
     subLinks?: Record<string, { name: string; path: string }[]>;
 }
-const mainLinkIcons: Record<string, unknown> = {
+const mainLinkIcons: Record<string, any> = {
     Home: faHome,
     User: faUser,
     Loaction: faMapMarkerAlt,
