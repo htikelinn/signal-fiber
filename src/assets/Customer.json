@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "srNo": 1,
+    "customerId": "C001",
+    "customerName": "John Doe",
+    "nrc": "12/ABC(N)123456",
+    "phoneNo1": "09-123456789",
+    "township": "Yangon",
+    "latitude": 16.8661,
+    "longitude": 96.1951,
+    "pointName": "Shop 1",
+    "createdDate": "2025-09-15"
+  }
+]

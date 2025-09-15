@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "Name": "Aung Min",
+    "LoginName": "aungmin",
+    "PhoneNumber": "0912345678",
+    "IsTeamLeader": true,
+    "IsEmployee": true,
+    "IsSystemAccess": true,
+    "UserRole": "Admin",
+    "Status": "Active",
+    "CreatedDate": "2025-01-10"
+  },
+  {
+    "id": 2,
+    "Name": "Su Mon",
+    "LoginName": "sumon",
+    "PhoneNumber": "0923456789",
+    "IsTeamLeader": false,
+    "IsEmployee": true,
+    "IsSystemAccess": true,
+    "UserRole": "User",
+    "Status": "Inactive",
+    "CreatedDate": "2025-02-10"
+  },
+  {
+    "id": 3,
+    "Name": "Kyaw Thu",
+    "LoginName": "kyawthu",
+    "PhoneNumber": "0945678901",
+    "IsTeamLeader": false,
+    "IsEmployee": true,
+    "IsSystemAccess": false,
+    "UserRole": "User",
+    "Status": "Active",
+    "CreatedDate": "2025-03-01"
+  },
+  {
+    "id": 4,
+    "Name": "Hlaing Win",
+    "LoginName": "hlaingwin",
+    "PhoneNumber": "0956789012",
+    "IsTeamLeader": true,
+    "IsEmployee": true,
+    "IsSystemAccess": true,
+    "UserRole": "Manager",
+    "Status": "Active",
+    "CreatedDate": "2025-03-10"
+  },
+  {
+    "id": 5,
+    "Name": "Thandar",
+    "LoginName": "thandar",
+    "PhoneNumber": "0967890123",
+    "IsTeamLeader": false,
+    "IsEmployee": true,
+    "IsSystemAccess": true,
+    "UserRole": "User",
+    "Status": "Inactive",
+    "CreatedDate": "2025-03-28"
+  },
+  {
+    "id": 6,
+    "Name": "Zaw Lin",
+    "LoginName": "zawlin",
+    "PhoneNumber": "0978901234",
+    "IsTeamLeader": false,
+    "IsEmployee": true,
+    "IsSystemAccess": false,
+    "UserRole": "User",
+    "Status": "Active",
+    "CreatedDate": "2025-04-10"
+  },
+  {
+    "id": 7,
+    "Name": "Ei Mon",
+    "LoginName": "eimon",
+    "PhoneNumber": "0989012345",
+    "IsTeamLeader": true,
+    "IsEmployee": true,
+    "IsSystemAccess": true,
+    "UserRole": "Admin",
+    "Status": "Active",
+    "CreatedDate": "2025-04-28"
+  },
+  {
+    "id": 8,
+    "Name": "Min Thu",
+    "LoginName": "minthu",
+    "PhoneNumber": "0990123456",
+    "IsTeamLeader": false,
+    "IsEmployee": true,
+    "IsSystemAccess": true,
+    "UserRole": "User",
+    "Status": "Inactive",
+    "CreatedDate": "2025-05-10"
+  },
+  {
+    "id": 9,
+    "Name": "Khin Htay",
+    "LoginName": "khintay",
+    "PhoneNumber": "0911223344",
+    "IsTeamLeader": false,
+    "IsEmployee": true,
+    "IsSystemAccess": false,
+    "UserRole": "User",
+    "Status": "Active",
+    "CreatedDate": "2025-05-28"
+  },
+  {
+    "id": 10,
+    "Name": "Su Wai",
+    "LoginName": "suwai",
+    "PhoneNumber": "0922334455",
+    "IsTeamLeader": true,
+    "IsEmployee": true,
+    "IsSystemAccess": true,
+    "UserRole": "Manager",
+    "Status": "Active",
+    "CreatedDate": "2025-06-10"
+  }
+]

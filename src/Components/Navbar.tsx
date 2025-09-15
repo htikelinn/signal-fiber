@@ -1,11 +1,14 @@
 // src/components/Navbar.tsx
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "./AuthContext";
 
 interface NavbarProps {
   brandName?: string;
   loginText?: string;
+  logoutText?: string;
   signupText?: string;
+
   menuTitle?: string;
   copyrightText?: string;
   mainLinks?: string[];
@@ -13,36 +16,40 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-  brandName = "Fiber",
+   brandName = "Fiber",
   loginText = "Login",
+  logoutText = "Logout",
   signupText = "Signup",
   menuTitle = "Navigation Menu",
   copyrightText = "© 2023 Your Brand",
-  mainLinks = ["Home", "Products", "Services", "About", "Contact", "Docs", "Support", "Careers"],
+  mainLinks = ["Home", "User", "Loaction","Points","Installiation","About", "Contact", "Docs", "Support"],
   subLinks = {
-    "Products": [
-      { name: "Web App", path: "/products/web" },
-      { name: "Mobile App", path: "/products/mobile" },
-      { name: "API", path: "/products/api" },
-      { name: "Integrations", path: "/products/integrations" }
+    
+    "User": [
+      { name: "User List", path: "/user-list" },
+      // { name: "Customers", path: "/customer-list" },
+      // { name: "API", path: "/products/api" },
+      // { name: "Integrations", path: "/products/integrations" }
     ],
-    "Services": [
-      { name: "Consulting", path: "/services/consulting" },
-      { name: "Installination", path: "/services/Installination" },
-      { name: "Training", path: "/services/training" },
-      { name: "Support", path: "/services/support" }
+
+    "Points": [
+      { name: "Points List", path: "/point-list" },
+    
+    ],
+    "Loaction": [
+      { name: "Loaction List", path: "/location-list" },
+     { name: "Loaction info setup", path: "/Loaction-info-setup" },
+      // { name: "Training", path: "/services/training" },
+      // { name: "Support", path: "/services/support" }
+    ],
+    "Installiation": [
+      { name: "Main Installination", path: "/services/Installination" },
     ],
     "Docs": [
       { name: "Getting Started", path: "/docs/getting-started" },
       { name: "API Reference", path: "/docs/api" },
       { name: "Examples", path: "/docs/examples" },
       { name: "Tutorials", path: "/docs/tutorials" }
-    ],
-    "Support": [
-      { name: "Help Center", path: "/support/help" },
-      { name: "Community", path: "/support/community" },
-      { name: "Contact Us", path: "/support/contact" },
-      { name: "Status", path: "/support/status" }
     ]
   }
 }: NavbarProps) {
@@ -60,9 +67,15 @@ export default function Navbar({
   const getMainLinkPath = (link: string) => {
     return `/${link.toLowerCase().replace(/\s+/g, '-')}`;
   };
+const { isLoggedIn, logout } = useAuth();
+  const navigate = useNavigate();
 
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
   return (
-    <div className="navbar bg-gradient-to-r from-purple-600 to-indigo-700 text-white shadow-lg px-4 py-3">
+    <div className="navbar bg-gradient-to-r from-[#2dbee2] to-[#1b8406] text-white shadow-lg px-4 py-3">
       {/* Left Hamburger Button */}
       <div className="flex-none">
         <button
@@ -132,8 +145,10 @@ export default function Navbar({
 
       {/* Enhanced Right side (desktop) */}
       <div className="flex-1 justify-end hidden md:flex items-center gap-3">
-        <Link 
-          to="/login" 
+        {
+          !isLoggedIn && (
+            <button 
+          onClick={() => navigate("/login")}
           className="relative group"
         >
           <div className="flex items-center space-x-1">
@@ -152,10 +167,38 @@ export default function Navbar({
           </div>
           {/* Hover underline effect */}
           <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-300 group-hover:w-full transition-all duration-300"></div>
-        </Link>
+        </button>
+          )
+        }
         
         <div className="h-5 w-px bg-white/30 mx-1"></div>
+           {
+             isLoggedIn && (
+               <button 
+          onClick={handleLogout}
+          className="relative group"
+        >
+          <div className="flex items-center space-x-1">
+            <span className="text-sm font-medium text-white/90 group-hover:text-white transition-colors duration-300">
+              {logoutText}
+            </span>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="h-4 w-4 text-white/70 group-hover:text-white transition-colors duration-300" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+            </svg>
+          </div>
+          {/* Hover underline effect */}
+          <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-300 group-hover:w-full transition-all duration-300"></div>
+        </button>
+             )
+           }
         
+        <div className="h-5 w-px bg-white/30 mx-1"></div>
         <Link 
           to="/signup" 
           className="relative group"
@@ -178,7 +221,7 @@ export default function Navbar({
           <div className="absolute inset-0 rounded-full bg-amber-400 group-hover:animate-ping opacity-0 group-hover:opacity-40 blur-md transition-opacity duration-300 z-[-1]"></div>
         </Link>
       </div>
-
+      
       {/* Sidebar Drawer with Backdrop */}
       {isOpen && (
         <div 
