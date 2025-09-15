@@ -146,7 +146,7 @@ export default function Home() {
                         placeholder="Enter kilometers"
                         className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                       />
-                      <span className="absolute right-4 top-4 text-gray-500">km</span>
+                      <span className="absolute right-10  top-4 text-gray-500">km</span>
                     </div>
                   </div>
                   <div className="bg-gray-50 p-5 rounded-xl">
@@ -159,7 +159,7 @@ export default function Home() {
                         placeholder="Enter miles"
                         className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                       />
-                      <span className="absolute right-4 top-4 text-gray-500">mi</span>
+                      <span className="absolute right-10 top-4 text-gray-500">mi</span>
                     </div>
                   </div>
                 </div>
@@ -270,7 +270,7 @@ export default function Home() {
         </div>
 
         <footer className="text-center text-gray-600 mt-8 py-4">
-          <p>© 2023 Utility Converter Pro | All rights reserved</p>
+          <p>© 2025 Utility Converter Pro | All rights reserved</p>
         </footer>
       </div>
     </div>

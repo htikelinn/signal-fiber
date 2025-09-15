@@ -1,5 +1,5 @@
 // src/components/Navbar.tsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import {
@@ -74,6 +74,11 @@ export default function Navbar({
         // ],
     },
 }: NavbarProps) {
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    }, [theme]);
     const [isOpen, setIsOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     const location = useLocation();
@@ -128,7 +133,6 @@ export default function Navbar({
                     </svg>
                 </button>
             </div>
-
             {/* Enhanced Logo/Brand section */}
             <div className="flex-1 ml-4 flex items-center">
                 <Link
@@ -167,9 +171,15 @@ export default function Navbar({
                     </div>
                 </Link>
             </div>
-
+            
             {/* Enhanced Right side (desktop) */}
             <div className="flex-1 justify-end md:flex items-center gap-3">
+            <button
+                className="btn btn-sm"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+                {theme === "dark" ? "🌞 Light" : "🌙 Dark"}
+            </button>
                 <div className="h-5 w-px bg-white/30 mx-1"></div>
                 {!isLoggedIn && (
                     <button onClick={() => navigate("/login")} className="relative group">
@@ -246,7 +256,6 @@ export default function Navbar({
                     <div className="absolute inset-0 rounded-full bg-amber-400 group-hover:animate-ping opacity-0 group-hover:opacity-40 blur-md transition-opacity duration-300 z-[-1]"></div>
                 </Link>
             </div>
-
             {/* Sidebar Drawer with Backdrop */}
             {isOpen && (
                 <div
@@ -254,7 +263,6 @@ export default function Navbar({
                     onClick={() => setIsOpen(false)}
                 ></div>
             )}
-
             <div
                 className={`fixed top-0 left-0 h-full w-80 bg-gradient-to-b from-purple-50 to-indigo-100 shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
                     isOpen ? "translate-x-0" : "-translate-x-full"

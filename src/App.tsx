@@ -13,6 +13,7 @@ import Login from "./Components/Login";
 import { AuthProvider, useAuth } from "./Components/AuthContext";
 import type { JSX } from "react";
 import SignUpForm from "./Components/SignUpForm";
+import MainCableMap from "./Components/MainCableMap";
 
 // ProtectedRoute wrapper
 const ProtectedRoute = ({ element }: { element: JSX.Element }) => {
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/location-list" element={<ProtectedRoute element={<LocationList />} />} />
           <Route path="/Loaction-info-setup" element={<ProtectedRoute element={<ComplainInfoSetup />} />} />
           <Route path="/point-list" element={<ProtectedRoute element={<PointList />} />} />
+          <Route path="/map" element={<ProtectedRoute element={<MainCableMap />} />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
