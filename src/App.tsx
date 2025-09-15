@@ -31,13 +31,12 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUpForm />} />
-
           <Route path="/products/web" element={<ProtectedRoute element={<Product />} />} />
           <Route path="/services/Installination" element={<ProtectedRoute element={<Installation />} />} />
           <Route path="/user-list" element={<ProtectedRoute element={<UserTable />} />} />
           <Route path="/customer-list" element={<ProtectedRoute element={<Customer />} />} />
           <Route path="/location-list" element={<ProtectedRoute element={<LocationList />} />} />
-          <Route path="/Loaction-info-setup" element={<ProtectedRoute element={<ComplainInfoSetup />} />} />
+          <Route path="/location-info-setup" element={<ProtectedRoute element={<ComplainInfoSetup />} />} />
           <Route path="/point-list" element={<ProtectedRoute element={<PointList />} />} />
           <Route path="/map" element={<ProtectedRoute element={<MainCableMap />} />} />
         </Routes>

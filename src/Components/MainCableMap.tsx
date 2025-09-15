@@ -26,7 +26,8 @@ export default function App() {
       : center;
 
   return (
-    <div className="container mx-auto p-6 space-y-6 my-auto">
+    // Main Container
+    <div className="max-w-4xl mx-auto p-6 space-y-6">
       <h1 className="text-3xl font-bold text-center text-indigo-600">
         Main Cable Map
       </h1>
@@ -59,7 +60,7 @@ export default function App() {
       </div>
 
       {/* 🗺️ Map Section */}
-      <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
+      <div className="rounded-xl overflow-hidden border border-gray-200">
         <LeafletMap
           center={currentCenter}
           markers={markers}
@@ -68,5 +69,6 @@ export default function App() {
         />
       </div>
     </div>
+    
   );
 }

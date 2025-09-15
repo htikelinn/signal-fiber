@@ -11,6 +11,7 @@ import {
     faMap,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUsers } from "@fortawesome/free-solid-svg-icons/faUsers";
 interface NavbarProps {
     brandName?: string;
     loginText?: string;
@@ -30,6 +31,7 @@ const mainLinkIcons: Record<string, any> = {
     Points: faStar,
     Installiation: faServer,
     Map: faMap,
+    Customers: faUsers
 };
 export default function Navbar({
     brandName = "Fiber",
@@ -58,9 +60,12 @@ export default function Navbar({
             // { name: "Integrations", path: "/products/integrations" }
         ],
         Points: [{ name: "Points List", path: "/point-list" }],
+        Customers: [{ name: "Customer info List", path: "/customer-list" },
+            { name: "Customer info setup", path: "/location-info-setup" } // !need to change
+        ],
         Loaction: [
             { name: "Loaction List", path: "/location-list" },
-            { name: "Loaction info setup", path: "/Loaction-info-setup" },
+            { name: "Loaction info setup", path: "/loaction-info-setup" },
             // { name: "Training", path: "/services/training" },
             // { name: "Support", path: "/services/support" }
         ],
@@ -102,7 +107,7 @@ export default function Navbar({
         navigate("/");
     };
     return (
-        <div className="navbar bg-gradient-to-r from-[#2dbee2] to-[#1b8406] text-white shadow-lg px-4 py-3">
+        <div className="navbar relative bg-gradient-to-r from-[#2dbee2] to-[#1b8406] text-white shadow-lg px-4 py-3">
             {/* Left Hamburger Button */}
             <div className="flex-none">
                 <button
@@ -149,6 +154,7 @@ export default function Navbar({
                                 className="h-6 w-6 text-white"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
+                                name="logo"
                             >
                                 <path
                                     fillRule="evenodd"
@@ -172,15 +178,15 @@ export default function Navbar({
                     </div>
                 </Link>
             </div>
-            
+
             {/* Enhanced Right side (desktop) */}
             <div className="flex-1 justify-end md:flex items-center gap-3">
-            <button
-                className="btn btn-sm"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
-                {theme === "dark" ? "🌞 Light" : "🌙 Dark"}
-            </button>
+                <button
+                    className="btn btn-sm"
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                >
+                    {theme === "dark" ? "🌞 Light" : "🌙 Dark"}
+                </button>
                 <div className="h-5 w-px bg-white/30 mx-1"></div>
                 {!isLoggedIn && (
                     <button onClick={() => navigate("/login")} className="relative group">
@@ -264,6 +270,7 @@ export default function Navbar({
                     onClick={() => setIsOpen(false)}
                 ></div>
             )}
+
             <div
                 className={`fixed top-0 left-0 h-full w-80 bg-gradient-to-b from-purple-50 to-indigo-100 shadow-2xl transform transition-transform duration-300 ease-in-out z-50 ${
                     isOpen ? "translate-x-0" : "-translate-x-full"
