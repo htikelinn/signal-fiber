@@ -22,6 +22,7 @@ interface NavbarProps {
     mainLinks?: string[];
     subLinks?: Record<string, { name: string; path: string }[]>;
 }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const mainLinkIcons: Record<string, any> = {
     Home: faHome,
     User: faUser,
