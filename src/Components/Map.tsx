@@ -8,6 +8,8 @@ import "leaflet/dist/leaflet.css";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
+// import "leaflet/dist/leaflet.css";
+
 interface MapProps {
     center: { lat: number; lng: number };
     zoom: number;
