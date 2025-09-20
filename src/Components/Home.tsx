@@ -233,7 +233,7 @@ const handleKmChange = (value: string) => {
                         placeholder="Enter °C"
                         className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                       />
-                      <span className="absolute right-4 top-4 text-gray-500">°C</span>
+                      <span className="absolute right-10 top-4 text-gray-500">°C</span>
                     </div>
                   </div>
                   <div className="bg-gray-50 p-5 rounded-xl">
@@ -271,7 +271,7 @@ const handleKmChange = (value: string) => {
                         placeholder="Enter km"
                         className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                       />
-                      <span className="absolute right-4 top-4 text-gray-500">km</span>
+                      <span className="absolute right-10 top-4 text-gray-500">km</span>
                     </div>
                   </div>
                   <div className="bg-gray-50 p-5 rounded-xl">
